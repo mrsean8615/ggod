@@ -79,11 +79,14 @@ class RequestsItem extends Component {
                         duration={300}
                         height={this.state.height}
                     >
-                        <div className='item-description'>
+                     <div className='item-description'>
+                           { !!imageUrl ?
+                           
                             <img 
                                 className='item-description__img'
                                 src={`${ROOT_URL}/${imageUrl}`}                        
-                            />
+                           />  : <div /> 
+                           }
                             <p className='item-description__text'>
                                 {body}
                             </p>

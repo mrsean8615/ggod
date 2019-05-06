@@ -19,14 +19,17 @@ class NewsletterLatest extends Component {
         return (
             <div className='newsletter-latest'>
                 <h1 className='newsletter-latest__title'>{title}</h1>
-                <img className='newsletter-latest__image' src={`${ROOT_URL}/${imageUrl}`}/>
+                { !!imageUrl ?
+                <img className='newsletter-latest__image' src={`${ROOT_URL}/${imageUrl}`}/> : <div />
+            }
                 <RequireAdmin>
                     <Button className='newsletter-latest__button' callback={() => this.handleEdit()} icon='fas fa-pencil-alt'/>
                 </RequireAdmin>
                 <div className='newsletter-latest__body'>
                     <p>{body}</p>
                 </div>
-            </div>
+                </div>
+           
         )
     }
 }
